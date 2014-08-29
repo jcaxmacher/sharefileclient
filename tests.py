@@ -50,7 +50,7 @@ class ShareFileClientTest(unittest.TestCase):
         # Then query
         found_employee = self.client.get_employee(email)
         self.assertFalse(found_employee['error'])
-        self.assertEquals(found_employee['value']['primaryemail'], email)
+        self.assertEqual(found_employee['value']['primaryemail'], email)
         # Then delete
         deleted_employee = self.client.delete_employee(email)
         self.assertFalse(deleted_employee['error'])
@@ -69,7 +69,7 @@ class ShareFileClientTest(unittest.TestCase):
         # Then query
         found_employee = self.client.get_employee(email)
         self.assertFalse(found_employee['error'])
-        self.assertEquals(found_employee['value']['primaryemail'], email)
+        self.assertEqual(found_employee['value']['primaryemail'], email)
         # Then upload a file
         new_client = ShareFileClient(sf_host, client_id, client_secret, email,
                                      password, company)
